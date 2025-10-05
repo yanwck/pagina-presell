@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Melhor Ia – Ferramenta de Presell Automática</title>
+  <style>
+    /* Reset simples */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.5; background: #f4f7fa; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* Header / Hero */
+    .hero {
+      background: #2a9d8f;
+      color: white;
+      text-align: center;
+      padding: 80px 20px 60px;
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    .btn-primary {
+      background: #e76f51;
+      color: white;
+      padding: 18px 36px;
+      font-size: 1.2em;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .btn-primary:hover {
+      background: #d65c43;
+    }
+
+    /* Container para seções */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* Seção “Como funciona” */
+    .how-it-works {
+      margin-top: 60px;
+    }
+    .how-it-works h2 {
+      text-align: center;
+      color: #264653;
+      margin-bottom: 40px;
+      font-size: 2em;
+    }
+    .how-it-works .step {
+      margin-bottom: 30px;
+    }
+    .how-it-works .step h3 {
+      color: #2a9d8f;
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+    .how-it-works .step p {
+      font-size: 1em;
+    }
+
+    /* Seção recursos / features */
+    .features {
+      margin-top: 80px;
+    }
+    .features h2 {
+      text-align: center;
+      color: #264653;
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+    .features .feature-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .features .feature-item:nth-child(even) .feature-content {
+      order: -1;
+    }
+    .features .feature-item img {
+      width: 250px;
+      border-radius: 8px;
+    }
+    .features .feature-content {
+      flex: 1;
+      padding: 0 20px;
+    }
+    .features .feature-content h3 {
+      color: #2a9d8f;
+      font-size: 1.4em;
+      margin-bottom: 12px;
+    }
+    .features .feature-content p {
+      font-size: 1em;
+    }
+
+    /* Prova social / depoimentos */
+    .testimonials {
+      margin-top: 80px;
+    }
+    .testimonials h2 {
+      text-align: center;
+      color: #264653;
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+    .testimonials .testimonial {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+    .testimonials .testimonial strong {
+      display: block;
+      margin-top: 12px;
+      font-style: normal;
+      color: #264653;
+    }
+
+    /* Urgência / escassez */
+    .urgency {
+      background: #ffebe6;
+      border: 2px solid #ff4d4d;
+      color: #b22222;
+      padding: 30px;
+      text-align: center;
+      font-size: 1.2em;
+      border-radius: 8px;
+      margin: 60px 20px;
+    }
+
+    /* Planos / preços */
+    .plans {
+      margin-top: 80px;
+    }
+    .plans h2 {
+      text-align: center;
+      color: #264653;
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+    .plans .plan-list {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .plans .plan {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      flex: 1;
+      min-width: 260px;
+      max-width: 320px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .plans .plan h3 {
+      color: #2a9d8f;
+      font-size: 1.6em;
+      margin-bottom: 20px;
+    }
+    .plans .plan .price {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .plans .plan ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .plans .plan ul li {
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+    .plans .plan .btn-plan {
+      background: #e76f51;
+      color: white;
+      padding: 14px 28px;
+      font-size: 1.1em;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .plans .plan .btn-plan:hover {
+      background: #d65c43;
+    }
+
+    /* Seção FAQ */
+    .faq {
+      margin-top: 80px;
+    }
+    .faq h2 {
+      text-align: center;
+      color: #264653;
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+    .faq .item {
+      margin-bottom: 20px;
+    }
+    .faq .item h4 {
+      font-size: 1.2em;
+      color: #2a9d8f;
+      margin-bottom: 8px;
+    }
+    .faq .item p {
+      font-size: 1em;
+    }
+
+    /* Rodapé */
+    .footer {
+      margin-top: 100px;
+      padding: 40px 20px;
+      text-align: center;
+      color: #777;
+      font-size: 0.9em;
+    }
+    .footer a {
+      color: #2a9d8f;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero / Cabeçalho -->
+  <section class="hero">
+    <div class="container">
+      <h1>Crie Páginas Presell Poderosas em Segundos</h1>
+      <p>Com esta ferramenta automática, você gera páginas presell otimizadas usando IA, sem precisar saber código ou design.</p>
+      <a href="https://kiwify.app/qeDlA3h?afid=658KsPY8" class="btn-primary" target="_blank">Quero Acessar Agora</a>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- Imagem ilustrativa / screenshot -->
+    <div style="text-align:center; margin-top: 40px;">
+      <img src="https://via.placeholder.com/800x400?text=Screenshot+da+Ferramenta" alt="Screenshot da ferramenta">
+    </div>
+
+    <!-- Como funciona -->
+    <section class="how-it-works">
+      <h2>Como Funciona</h2>
+      <div class="step">
+        <h3>1. Cole seu link de afiliado</h3>
+        <p>Você só precisa inserir o link da oferta que quer promover. A IA vai trabalhar o resto.</p>
+      </div>
+      <div class="step">
+        <h3>2. Escolha um modelo</h3>
+        <p>Selecione entre vários templates: review, VSL, presell fantasma, segmentada etc.</p>
+      </div>
+      <div class="step">
+        <h3>3. Personalize & Publique</h3>
+        <p>Altere textos, cores e imagens em poucos cliques e publique em seu domínio ou subdomínio.</p>
+      </div>
+    </section>
+
+    <!-- Recursos / features -->
+    <section class="features">
+      <h2>Recursos Incríveis</h2>
+
+      <div class="feature-item">
+        <img src="https://via.placeholder.com/250?text=Template+Profissional" alt="Template Profissional">
+        <div class="feature-content">
+          <h3>Templates Profissionais</h3>
+          <p>Modelos otimizados para conversão, prontos para você usar.</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <img src="https://via.placeholder.com/250?text=Editor+Intuitivo" alt="Editor Intuitivo">
+        <div class="feature-content">
+          <h3>Editor Intuitivo</h3>
+          <p>Interface simples e visual — sem necessidade de código.</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <img src="https://via.placeholder.com/250?text=Mobile+Friendly" alt="Mobile Friendly">
+        <div class="feature-content">
+          <h3>Responsivo / Mobile Friendly</h3>
+          <p>Páginas que ficam perfeitas em celulares e tablets.</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <img src="https://via.placeholder.com/250?text=Velocidade+Alta" alt="Velocidade Alta">
+        <div class="feature-content">
+          <h3>Velocidade de Carregamento</h3>
+          <p>Páginas enxutas e rápidas, sem perda de performance.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Depoimentos / Prova Social -->
+    <section class="testimonials">
+      <h2>O Que Estão Dizendo</h2>
+
+      <div class="testimonial">
+        “Nunca imaginei que poderia criar páginas tão boas sem conhecimento técnico. Fiz minha primeira página e já comecei a testar campanhas.”  
+        <strong>– Ana P., Afiliada</strong>
+      </div>
+
+      <div class="testimonial">
+        “Economizei semanas de trabalho. Agora, com 10 minutos já coloco uma campanha rodando e vejo resultados.”  
+        <strong>– João R., Gestor de Tráfego</strong>
+      </div>
+
+      <div class="testimonial">
+        “Uso para todas as minhas ofertas. A interface é limpa e tudo roda liso. Recomendo para quem quer escalar.”  
+        <strong>– Marina C., Copywriter</strong>
+      </div>
+    </section>
+
+    <!-- Urgência / oferta limitada -->
+    <div class="urgency">
+      ⚠️ Oferta por tempo limitado: preços promocionais + bônus exclusivos disponíveis apenas para os primeiros **100 usuários**!  
+      <br>Garanta seu acesso antes que acabe.
+    </div>
+
+    <!-- Planos / preços -->
+    <section class="plans">
+      <h2>Escolha Seu Plano</h2>
+      <div class="plan-list">
+        <div class="plan">
+          <h3>Plano Básico</h3>
+          <div class="price">R$197</div>
+          <ul>
+            <li>Uso em 1 domínio</li>
+            <li>Templates principais</li>
+            <li>Editor visual</li>
+            <li>Suporte via chat</li>
+          </ul>
+          <a href="https://kiwify.app/qeDlA3h?afid=658KsPY8" class="btn-plan" target="_blank">Comprar Agora</a>
+        </div>
+
+        <div class="plan">
+          <h3>Plano Avançado</h3>
+          <div class="price">R$297</div>
+          <ul>
+            <li>Uso em até 5 domínios</li>
+            <li>Templates avançados e segmentados</li>
+            <li>Editor completo + recursos extras</li>
+            <li>Suporte premium</li>
+          </ul>
+          <a href="https://kiwify.app/qeDlA3h?afid=658KsPY8" class="btn-plan" target="_blank">Comprar Agora</a>
+        </div>
+
+        <div class="plan">
+          <h3>Plano Profissional</h3>
+          <div class="price">R$397</div>
+          <ul>
+            <li>Domínios ilimitados</li>
+            <li>Todos os templates + IA total</li>
+            <li>Editor avançado + automações</li>
+            <li>Suporte VIP 24h</li>
+          </ul>
+          <a href="https://kiwify.app/qeDlA3h?afid=658KsPY8" class="btn-plan" target="_blank">Comprar Agora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ / Perguntas Frequentes -->
+    <section class="faq">
+      <h2>Perguntas Frequentes</h2>
+      <div class="item">
+        <h4>Preciso saber programar?</h4>
+        <p>Não. A ferramenta foi feita para qualquer pessoa. Você só colar seu link e usar os templates.</p>
+      </div>
+      <div class="item">
+        <h4>Quantas páginas posso criar?</h4>
+        <p>Você pode criar páginas ilimitadas, sem restrições.</p>
+      </div>
+      <div class="item">
+        <h4>Preciso ter hospedagem?</h4>
+        <p>Sim, você vai precisar de domínio e hospedagem para publicar suas páginas ou usar subdomínio.</p>
+      </div>
+      <div class="item">
+        <h4>Tem garantia?</h4>
+        <p>Sim! 7 dias de garantia total para você testar e garantir que funciona pra você.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    &copy; 2025 Sua Ferramenta de Presell. Todos os direitos reservados.  
+    <br>Disclaimer: Resultados variam de pessoa para pessoa.
+  </footer>
+
+</body>
+</html>
